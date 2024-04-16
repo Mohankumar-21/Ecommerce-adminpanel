@@ -11,7 +11,8 @@ const AddProduct = () => {
         image:"",
         category:"women",
         new_price:"",
-        old_price:""
+        old_price:"",
+        quantity:"",
     })
 
     const handleImgae = (e)=>
@@ -83,6 +84,7 @@ const AddProduct = () => {
            <input value={productDetails.newprice} onChange={changeHandler} type='text' name='new_price' placeholder='Type here' />
         </div> 
        </div>
+       <div className='add-product-price'>
        <div className='add-product-itemfield'>
            <p>Product Category</p>
             <select value={productDetails.category} onChange={changeHandler} name='category' id='' className='add-product-selector'>
@@ -90,7 +92,13 @@ const AddProduct = () => {
                 <option value="men">men</option>
                 <option value="kid">Kid</option>
             </select>
+           
         </div> 
+        <div className='add-product-itemfield'>
+            <p>Quantity</p>
+           <input value={productDetails.oldprice} onChange={changeHandler} type='text' name='quantity' placeholder='Type here' />
+        </div>
+        </div>
         <div className='add-product-itemfield'>
              <label htmlFor='file-input' >
                  <img src={ image ? URL.createObjectURL(image)  : upload_area} alt='' className='addproduct-thumbnail-img' />
